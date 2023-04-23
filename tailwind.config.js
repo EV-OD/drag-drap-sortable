@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        "load-drag": "loadRotate 0.3s linear"
+      }
+    },
   },
   plugins: [],
 }
