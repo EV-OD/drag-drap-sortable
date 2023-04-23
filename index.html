@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body class="min-h-screen">
+    <div class="app w-full h-screen pt-10">
+      <div
+        class="listboxes max-w-xl mx-auto flex flex-col gap-2 bg-slate-700 text-white px-3 py-10"
+      >
+        <div draggable="true" class="item bg-slate-500 py-2 pl-3 rounded">
+          Python
+        </div>
+        <div draggable="true" class="item bg-slate-500 py-2 pl-3 rounded">
+          Javascript
+        </div>
+        <div draggable="true" class="item bg-slate-500 py-2 pl-3 rounded">
+          C++
+        </div>
+        <div draggable="true" class="item bg-slate-500 py-2 pl-3 rounded">
+          Rust
+        </div>
+      </div>
+    </div>
+    <script type="module" defer src="/src/main.ts"></script>
+  </body>
+</html>
