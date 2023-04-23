@@ -41,7 +41,6 @@ jobs:
           node-version: 18.x
           cache: "pnpm"
       
-      - run: pnpm install --frozen-lockfile
       - run: pnpm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
