@@ -5,7 +5,6 @@ const listboxesElt = document.querySelector(".listboxes");
 
 let draggingElt: null | Element = null;
 let dragoverElt: null | Element = null;
-let index: null | number = null;
 let direction: "up" | "down" | null = null;
 let hr = document.createElement("hr");
 hr.className = "h-1 bg-white border-none";
@@ -33,19 +32,20 @@ items.forEach((item) => {
       draggingElt?.removeEventListener("animationend", deleteAnimation);
       draggingElt = null;
       dragoverElt = null;
-      index = null;
       direction = null;
     };
     draggingElt?.addEventListener("animationend", deleteAnimation);
   });
   item.addEventListener("dragover", (e) => {
     e.preventDefault();
+    let event = e as MouseEvent;
     dragoverElt = item;
     if (item != draggingElt) {
       let eltDimData = item.getBoundingClientRect();
       let eltParentData = item.parentElement?.getBoundingClientRect();
 
-      let mouseRelativeY = e.clientY - eltParentData?.top;
+      let mouseRelativeY =
+        event.clientY - (eltParentData?.top ? eltParentData?.top : 0);
       let middleDim = eltDimData.top - eltDimData.height / 2;
       if (middleDim > mouseRelativeY) {
         item.before(hr);
